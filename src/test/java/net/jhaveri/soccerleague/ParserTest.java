@@ -32,4 +32,9 @@ public class ParserTest {
         Assert.assertEquals("Robots", games.get(4).team1.team);
         Assert.assertEquals("Grandparents", games.get(4).team2.team);
     }
+
+    @Test(expected = RuntimeException.class)
+    public void parseInvalidGame() {
+        Parser.parseGame("A");
+    }
 }
